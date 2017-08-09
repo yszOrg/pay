@@ -1,0 +1,40 @@
+{
+  "name": "pay",
+  "version": "0.0.1",
+  "description": "岭尚智支付系统",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=dev node server/ & webpack --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yszOrg/pay.git"
+  },
+  "keywords": [
+    "pay"
+  ],
+  "author": "ken",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yszOrg/pay/issues"
+  },
+  "homepage": "https://github.com/yszOrg/pay#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.0.4",
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2"
+  }
+}
