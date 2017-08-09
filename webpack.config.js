@@ -2,10 +2,12 @@ const webpack = require('webpack')
 const path = require('path')
 
 const config  = {
-  entry: ['./src/index.js'],
+  entry: ['webpack-hot-middleware/client','./src/index.js'],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public'),
+    hotUpdateChunkFilename: 'tmp/[id].[hash].hot-update.js',
+    hotUpdateMainFilename: 'tmp/[hash].hot-update.json'
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -15,6 +17,9 @@ const config  = {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       use: [
+         {
+           loader: 'react-hot-loader'
+         },
          {
            loader: 'babel-loader',
            query: {presets: ['react']}
@@ -33,9 +38,5 @@ const config  = {
   ]
 }
 
-if (process.env.NODE_ENV === 'dev'){
-  config.entry.unshift('webpack-hot-middleware');
-  config.module.rules[0].use.unshift({loader: 'react-hot-loader'})
-}
 
 module.exports = config;

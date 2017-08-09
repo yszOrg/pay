@@ -4,7 +4,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>react app runing+!</h1>
+        <h1>react app runing !</h1>
       </div>
     )
   }
