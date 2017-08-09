@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static('public'))
 
-const env = app.get('env')
+const env = process.env.NODE_ENV
 
 if (env === 'dev'){
   const webpack = require('webpack')

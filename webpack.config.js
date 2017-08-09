@@ -1,8 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
 
-module.exports = {
-  entry: ['webpack-hot-middleware/client','./src/index.js'],
+const config  = {
+  entry: ['./src/index.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
@@ -14,8 +14,12 @@ module.exports = {
     rules: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {presets: ['react']}
+      use: [
+         {
+           loader: 'babel-loader',
+           query: {presets: ['react']}
+         }
+      ]
     }, {
       test: /\.css$/,
       loader: 'style!css'
@@ -28,3 +32,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ]
 }
+
+if (process.env.NODE_ENV === 'dev'){
+  config.entry.unshift('webpack-hot-middleware');
+  config.module.rules[0].use.unshift({loader: 'react-hot-loader'})
+}
+
+module.exports = config;
