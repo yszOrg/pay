@@ -1,0 +1,32 @@
+<div class="page-test">
+  <form method="post">
+  <table>
+    <tr>
+      <th>产品名称：</th>
+      <td><%= title  %> <input name="prd_title" type="hidden" value="<%= title %>"></td>
+    </tr>
+    <tr>
+      <th>描述：</th>
+      <td><%= description %> <input name="prd_detail" type="hidden" value="<%= description  %>"></td>
+    </tr>
+    <tr>
+      <th>金额：</th>
+      <td><input type="number" name="prd_fee" value="<%= fee %>"></td>
+    </tr>
+    <tr>
+      <th>支付方式：</th>
+      <td>
+        <input name="pay_type" type="radio" value="wxpay" checked>微信</br>
+        <input name="pay_type" type="radio" value="alipay">支付宝
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><button type="submit">支付</button></td>
+    </tr>
+  </table>
+  </form>
+</div>
+
+
+<script></script>

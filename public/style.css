@@ -1,0 +1,11 @@
+html,body {
+  padding: 0;
+  margin: 0;
+}
+
+.page-test table td {
+  padding: 5px 10px;
+}
+.page-test table th {
+  text-align: right;
+}
