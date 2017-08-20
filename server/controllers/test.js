@@ -15,9 +15,8 @@ module.exports = {
   },
   POST: function(req, res){
     var wxOrderObj = {
-      attach: req.body.prd_title,
-      body: req.body.prd_detail,
-      detail: '',
+      body: req.body.prd_title,
+      detail: req.body.prd_detail,
       out_trade_no: + new Date(),
       total_fee: req.body.prd_fee * 100
     }
@@ -29,8 +28,7 @@ module.exports = {
     if (req.body.pay_type === 'wxpay'){
       unPay.pc(req.body, 'wxpay')
         .then(ret => {
-          res.write(ret.img_code_url)
-          res.end()
+          res.render('test-pro', ret)
         })
     }else{
       unPay.pc(req.body, 'alipay')

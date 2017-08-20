@@ -12,8 +12,8 @@ function AliPay() {
   this.options = arguments[0]
   this.alipayCfg = {}
   this.getewayUrl = 'https://mapi.alipay.com/gateway.do'
-  this.rasPrivate = fs.readFileSync(path.resolve(__dirname, '../rsa_private_key.pem'))
-  this.rasPublic = fs.readFileSync(path.resolve(__dirname, '../rsa_public_key.pem'))
+  //this.rasPrivate = fs.readFileSync(path.resolve(__dirname, '../rsa/rsa_private_key.pem'))
+  //this.rasPublic = fs.readFileSync(path.resolve(__dirname, '../rsa/rsa_public_key.pem'))
 }
 
 AliPay.prototype.sign = function(param) {
